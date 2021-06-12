@@ -14,7 +14,7 @@ import java.util.List;
 
 @Service
 public class QuizServiceWork implements QuizService{
-   // List<Quiz> list;
+
         @Autowired
         private QuizDao quizDao;
 
@@ -24,16 +24,11 @@ public class QuizServiceWork implements QuizService{
         @Autowired
         private ChoiceDao choiceDao;
 
-
         public QuizServiceWork() {
-            //        this.list = new ArrayList<>();
-//        this.list.add(new Quiz(1, "java Quiz", 100, new Date(2020,5,31)));
-//        this.list.add(new Quiz(2, "spring boot Quiz", 100, new Date(2020,6,1)));
-    }
+          }
 
     @Override
     public List<Quiz> getQuizzes() {
-
          return quizDao.findAll();
     }
 
@@ -44,8 +39,4 @@ public class QuizServiceWork implements QuizService{
 
     }
 
-    @Override
-    public Choice addChoice(Choice choice) {
-        return null;
-    }
 }

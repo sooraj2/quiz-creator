@@ -11,9 +11,6 @@ public interface QuizService {
 
     public Quiz addQuiz(Quiz quiz);
 
-    public Choice addChoice(Choice choice);
-
-
 
 
 

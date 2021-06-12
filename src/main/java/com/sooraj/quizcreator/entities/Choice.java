@@ -5,9 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Data
 @NoArgsConstructor
@@ -16,16 +14,14 @@ import javax.persistence.ManyToOne;
 public class Choice {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String choice_description;
-    private Boolean correct;
+    private Boolean Iscorrect;
 
-    @ManyToOne
-    private Question question;
-
-    public Choice(Long id, String choice_description, Boolean correct) {
+    public Choice(Long id, String choice_description, Boolean Iscorrect) {
         this.id = id;
         this.choice_description = choice_description;
-        this.correct = correct;
+        this.Iscorrect = Iscorrect;
     }
 }

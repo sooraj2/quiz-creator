@@ -4,9 +4,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+import java.util.List;
 
 
 @Data
@@ -16,18 +15,19 @@ import javax.persistence.ManyToOne;
 public class Question {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String description;
-    private String type;
+    private Boolean IsSingleChoice;
     private String points;
 
-    @ManyToOne
-    private Quiz quiz;
+    @OneToMany(cascade = {CascadeType.ALL})
+    private List<Choice> choices;
 
-    public Question(Long id, String description, String type, String points) {
+    public Question(Long id, String description, Boolean IsSingleChoice, String points) {
         this.id = id;
         this.description = description;
-        this.type = type;
+        this.IsSingleChoice = IsSingleChoice;
         this.points = points;
     }
 
