@@ -16,12 +16,12 @@ public class Choice {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String choice_description;
-    private Boolean Iscorrect;
+    private String textChoice;
+    private Boolean isCorrect;
 
-    public Choice(Long id, String choice_description, Boolean Iscorrect) {
+    public Choice(Long id, String textChoice, Boolean isCorrect) {
         this.id = id;
-        this.choice_description = choice_description;
-        this.Iscorrect = Iscorrect;
+        this.textChoice = textChoice;
+        this.isCorrect = isCorrect;
     }
 }

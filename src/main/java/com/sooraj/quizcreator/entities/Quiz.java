@@ -20,18 +20,18 @@ public class Quiz {
     private Long id;
     private String title;
     private Long points;
-    private Long duration;
-    private Date deadline;
+    private Long timeDuration;
+    private Date date;
 
     @OneToMany(cascade = {CascadeType.ALL})
     private List<Question> questions;
 
-    public Quiz(Long id, String title, Long points, Long duration, Date deadline) {
+    public Quiz(Long id, String title, Long points, Long timeDuration, Date date) {
         this.id = id;
         this.title = title;
         this.points = points;
-        this.duration = duration;
-        this.deadline = deadline;
+        this.timeDuration = timeDuration;
+        this.date = date;
     }
 
 }

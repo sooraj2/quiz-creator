@@ -17,17 +17,17 @@ public class Question {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String description;
-    private Boolean IsSingleChoice;
+    private String question;
+    private String type;
     private String points;
 
     @OneToMany(cascade = {CascadeType.ALL})
     private List<Choice> choices;
 
-    public Question(Long id, String description, Boolean IsSingleChoice, String points) {
+    public Question(Long id, String question, String type, String points) {
         this.id = id;
-        this.description = description;
-        this.IsSingleChoice = IsSingleChoice;
+        this.question = question;
+        this.type = type;
         this.points = points;
     }
 
